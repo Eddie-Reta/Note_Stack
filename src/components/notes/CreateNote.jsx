@@ -1,5 +1,6 @@
 import React, {useState} from "react";
-
+import NoteAddIcon from '@material-ui/icons/NoteAdd';
+import {Fab, Zoom} from '@material-ui/core';
 //Create a constant that keeps of track of tiltle and content
 //pass new note to the app compenent
 //add new note to an array
@@ -11,6 +12,15 @@ const [textInput, setInput] = useState({
   title: "",
   content: ""
 });
+
+const [textAreaEx, setTextAreaEx] = useState(false);
+
+const [missingText, setMissingText] = useState(false);
+
+const [placeholder, setPlaceholder] = useState({
+  title: "Title",
+  content: "Take a note ..."
+})
 
 //Create values that populate 
 function handleChange(event) {
@@ -30,19 +40,37 @@ function handleChange(event) {
     
 };
 
+function addText(event) {
+  if (textInput.title === "") {
+    setPlaceholder({
+      title: "Please add Title.",
+      content: textInput.content
+    }); 
+  } else if (textInput.content === "") {
+    setPlaceholder({
+      title: textInput.title,
+      content: "Please add Note."})
+  } else {
+    return props.addNote(textInput);
+  };
+};
+
+function accessNote() {
+  setTextAreaEx(true);
+};
+
   return (
     <div>
-      <form>
-      <input value={textInput.title} name="title" placeholder="Title" onChange={handleChange} />
-        <textarea value={textInput.content} name="content" placeholder="Take a note..." rows="3" onChange={handleChange} />
-        <button onClick={(event) => {
-          props.addNote(textInput);
-          setInput({
-            title: "",
-            content: ""
-          });
+      <form className="create-note">
+      {textAreaEx && <input value={textInput.title} name='title' placeholder={placeholder.title} onChange={handleChange} />}
+        <textarea value={textInput.content} name="content" placeholder={placeholder.content} rows={textAreaEx ? "3" : "1"} onChange={handleChange} onClick={accessNote} />
+        <Zoom in={textAreaEx}>
+        <Fab onClick={(event) => {
           event.preventDefault();
-        }}>Add</button>
+          addText();
+        }}><NoteAddIcon  />
+        </Fab>
+        </Zoom>
       </form>
       
     </div>

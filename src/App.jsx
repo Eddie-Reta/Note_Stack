@@ -5,11 +5,10 @@ import Footer from "./components/Footer";
 import "./css/style.css";
 import CreateNote from  "./components/notes/CreateNote";
 
-
-
 function App() {
 
     const [notes, setNote] = useState([]);
+    
 
     function addNewNote(newNote) {       
         setNote(prevNote => {
@@ -25,10 +24,14 @@ function App() {
         });
     }
 
+    function b() {
+
+    }
+
     return ( 
     <div>
     <Header />
-    <CreateNote addNote={addNewNote} />
+    <CreateNote addNote={addNewNote}  />
     {notes.map((note, index) => (
         <Note 
             key={index}
