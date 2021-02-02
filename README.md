@@ -7,6 +7,6 @@ Note_Stack
 
 ## Usage
 
-    ![Note Start]("./src/images/note_hello.gif")
+    ![Note Start]("/src/images/note_hello.gif")
 
     * Just put in your title and descrption. Click the add button. 
