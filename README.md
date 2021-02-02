@@ -7,6 +7,6 @@
 
 # Usage
 
-    
+    ![NoteStart](/src/images/note_hello.gif)
 
     * Just put in your title and descrption. Click the add button. 
