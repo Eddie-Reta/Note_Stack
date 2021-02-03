@@ -1,4 +1,12 @@
 const notes = [
+{
+  key: 0,
+  title: "How to Get Started",
+  content: `Just fill in the title and description. \n 
+  Now click the yellow add button to the right to add your note. 
+  \n If you decide to remove a note just click the delete icon to remove it. `
+}
+
     // {
     //   key: 1,
     //   title: "Delegation",

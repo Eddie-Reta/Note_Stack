@@ -15,8 +15,6 @@ const [textInput, setInput] = useState({
 
 const [textAreaEx, setTextAreaEx] = useState(false);
 
-const [missingText, setMissingText] = useState(false);
-
 const [placeholder, setPlaceholder] = useState({
   title: "Title",
   content: "Take a note ..."
@@ -57,13 +55,17 @@ function addText(event) {
 
 function accessNote() {
   setTextAreaEx(true);
+ 
 };
 
   return (
     <div>
       <form className="create-note">
       {textAreaEx && <input value={textInput.title} name='title' placeholder={placeholder.title} onChange={handleChange} />}
-        <textarea value={textInput.content} name="content" placeholder={placeholder.content} rows={textAreaEx ? "3" : "1"} onChange={handleChange} onClick={accessNote} />
+        <textarea value={textInput.content} name="content" placeholder={placeholder.content} rows={textAreaEx ? "3" : "1"} onChange={handleChange} onClick={() => {
+          accessNote();
+         props.removeNote(textAreaEx);
+           }} />
         <Zoom in={textAreaEx}>
         <Fab onClick={(event) => {
           event.preventDefault();
