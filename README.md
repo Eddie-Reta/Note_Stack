@@ -6,6 +6,18 @@ Why not keep a little note on your desktop using this site?
 Here just add a title and a description, but 
 don't refresh the page you dont want to loose those :memo: notes.  
 
+# Goal
+
+    NoteStack is website that create as many notes using React.
+
+# Technologies/Framework
+
+* React
+* Javascript
+* CSS
+* HTML
+* Moment-UI
+
 # Usage
 
 * Just put in your title and descrption. Click the add button. 
@@ -20,12 +32,10 @@ don't refresh the page you dont want to loose those :memo: notes.
 
 ![DeleteNote](/src/images/delete_note.gif)
 
-# Technologies
+# My GitHub
 
-* React
-* Javascript
-* CSS
-* HTML
+[https://github.com/Eddie-Reta](https://github.com/Eddie-Reta)
 
 # License
-    ISC
+
+ISC :copyright: **Eduardo Reta Jr.**
