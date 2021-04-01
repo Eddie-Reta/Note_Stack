@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import NoteAddIcon from '@material-ui/icons/NoteAdd';
 import {Fab, Zoom} from '@material-ui/core';
-//Create a constant that keeps of track of tiltle and content
+//Create a constant that keeps of track of title and content
 //pass new note to the app compenent
 //add new note to an array
 //take array and render seperte noite components
@@ -49,6 +49,10 @@ function addText(event) {
       title: textInput.title,
       content: "Please add Note."})
   } else {
+    setInput({
+      title: "",
+      content: ""
+    })
     return props.addNote(textInput);
   };
 };
